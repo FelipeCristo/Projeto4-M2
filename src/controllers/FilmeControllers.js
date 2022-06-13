@@ -108,37 +108,37 @@ const editar = async (req, res) => {
 };
 
 // rota deletar o filme
-// const deletar = async (req, res) => {
-//   try {
-//     await Filme.destroy({ where: { id: req.params.id } });
-//     message = "Filme removido com sucesso",
-//     type = "success",
-//     res.redirect("/");
-//   } catch (err) {
-//     //deu erro, venha nesse caminho
-//     res.status(500).send({ err: err.message }); //vem do objeto erro
-//   }
-// };
-
-//rota da prof duda deletar
-const deletar = async (req,res) => {
-  try{
-    const filme = await Filme.findByPk(req.params.id);
-
-    if(!filme){
-      res.render("deletar", {
-        message: "Filme não foi encontrado!",
-        type: "danger",
-      });
-    }
-    res.render("deletar", {
-      filme, message:"",
-    });
-  }catch (err) {
+const deletar = async (req, res) => {
+  try {
+    await Filme.destroy({ where: { id: req.params.id } });
+    message = "Filme removido com sucesso",
+    type = "success",
+    res.redirect("/");
+  } catch (err) {
     //deu erro, venha nesse caminho
     res.status(500).send({ err: err.message }); //vem do objeto erro
-}
+  }
 };
+
+//rota da prof duda deletar
+// const deletar = async (req,res) => {
+//   try{
+//     const filme = await Filme.findByPk(req.params.id);
+
+//     if(!filme){
+//       res.render("deletar", {
+//         message: "Filme não foi encontrado!",
+//         type: "danger",
+//       });
+//     }
+//     res.render("deletar", {
+//       filme, message:"",
+//     });
+//   }catch (err) {
+//     //deu erro, venha nesse caminho
+//     res.status(500).send({ err: err.message }); //vem do objeto erro
+// }
+// };
 
 const deletar1 = async (req,res) => {
   const filme = await Filme.findByPk(req.params.id);
