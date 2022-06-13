@@ -19,7 +19,7 @@
             <% if (filmeSearch.length == 0){ %>
                 <div class="container">
                   <% filmes.forEach((filme) => { %>
-                  <div class="item">
+                  <div class="filme">
                     <h2><%= filme.nome %></h2>
                     <p><%= filme.descricao %></p>
                     <a href="/filmes/<%= filme.id %>"
@@ -39,7 +39,7 @@
 
                     <div class="container">
                         <% filmeSearch.forEach((filme) => { %>
-                        <div class="item">
+                        <div class="filme">
                           <h2><%= filme.nome %></h2>
                           <p><%= filme.descricao %></p>
                           <a href="/filmes/<%= filme.id %>"
@@ -51,18 +51,7 @@
                       <% } %>
                     </main>      
 
-            <div class="container">
-                <% filmes.forEach(item => { %>
-                    <div class="item">
-                        <h2><%= item.nome %></h2>
-                        <p><%= item.descricao %></p>
-                        <a href="/filmes/<%= item.id %>"><img src="<%= item.imagem %>" alt="capa do filme"></a>
-                    </div>
-                <% }) %>
-            </div>
-    
-    
-        </main>
+
     <footer>
         <%- include('./components/footer') %>
     </footer>
