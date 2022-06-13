@@ -32,4 +32,8 @@ const Filme = database.sequelize.define(
     }
 );
 
+const initTable = async() =>{
+    await Filme.sync();
+}
+initTable();
 module.exports = Filme;
