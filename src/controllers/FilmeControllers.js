@@ -112,7 +112,7 @@ const deletar = async (req, res) => {
   try {
     await Filme.destroy({ where: { id: req.params.id } });
     message = "Filme removido com sucesso",
-    type = "success",
+    type = "danger",
     res.redirect("/");
   } catch (err) {
     //deu erro, venha nesse caminho
