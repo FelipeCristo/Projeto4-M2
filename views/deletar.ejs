@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('./components/head') %>
+</head>
+<body>
+    <header>
+            <h1>FakeFlix</h1>
+        <nav>
+            <%- include('./components/nav') %>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <span><% if(message != ""){ message } %></span>
+            <form method="POST" action="/deletar/<%= filme.id %>">
+                <div class="item">
+                    <h2>Dejesa realmente deletar?</h2>
+                    <span class="delecao"> <%= filme.nome %> 
+                    </span>
+                </div>
+                <div class="item">
+                    <img src="<%= filme.imagem %>" alt="capa do filme">
+                </div>
+                <div class="item">
+                    <a href="/filmes/<%= filme.id %>" class="cancelar">Cancelar</a>
+                    <button type="submit">Confirmar Exclusão</button>
+                </div>
+                
+            </form>
+        </div>
+    </main>
+<footer>
+        <%- include('./components/footer') %>
+</footer>  
+    <script src="/js/script.js"></script> 
+</body>
+</html>
+

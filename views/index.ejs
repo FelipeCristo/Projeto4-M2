@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('./components/head') %>
+</head>
+<body>
+    <header>
+            <h1>FakeFlix</h1>
+    
+        <nav>   
+            <%- include('./components/nav') %>
+        </nav>
+    </header>
+    <main>
+
+        <div class="container">
+            <% filmes.forEach(item => { %>
+                <div class="item">
+                    <h2><%= item.nome %></h2>
+                    <p><%= item.descricao %></p>
+                    <a href="/filmes/<%= item.id %>"><img src="<%= item.imagem %>" alt="capa do filme"></a>
+                </div>
+            <% }) %>
+        </div>
+
+
+    </main>
+<footer>
+    <%- include('./components/footer') %>
+</footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>
