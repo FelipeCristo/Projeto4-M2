@@ -38,18 +38,17 @@
                     </section>
 
                     <div class="container">
-                        <% filmeSearch.forEach((filme) => { %>
-                        <div class="filme">
-                          <h2><%= filme.nome %></h2>
-                          <p><%= filme.descricao %></p>
-                          <a href="/filmes/<%= filme.id %>"
-                            ><img src="<%= filme.imagem %>" alt="capa do filme"
-                          /></a>
-                        </div>
+                        <% filmes.forEach(filme => { %>
+                            <div class="filme">
+                                <h2><%= filme.nome %></h2>
+                                <p><%= filme.descricao %></p>
+                                <a href="/filmes/<%= filme.id %>"><img src="<%= filme.imagem %>" alt="capa do filme"></a>
+                            </div>
                         <% }) %>
-                      </div>
-                      <% } %>
-                    </main>      
+                    </div>
+        
+        
+                </main>   
 
 
     <footer>
