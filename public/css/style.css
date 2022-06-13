@@ -81,8 +81,9 @@
     border-radius: 10px;
     margin-bottom: 2rem;
     }
-  .item:hover{
+  .item:hover, focus{
 transform: scale(1.1);
+transition:5000ms;
   }
   
   .item a.cancelar {
