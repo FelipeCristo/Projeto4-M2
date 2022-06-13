@@ -8,4 +8,5 @@ routes.post("/criacao", FilmeController.criacao);
 routes.get("/editar/:id", FilmeController.editar1);
 routes.post("/editar/:id", FilmeController.editar);
 routes.get("/deletar/:id", FilmeController.deletar);
+routes.post("/pesquisa", FilmeController.pesquisaNome);
 module.exports = routes;
