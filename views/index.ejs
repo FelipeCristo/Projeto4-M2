@@ -9,10 +9,48 @@
         
             <nav>   
                 <%- include('./components/nav') %>
+                <% if(message != "") {%>
+                    <%-include('./components/alerts') %> 
+                    <% } %>
             </nav>
         </header>
         <main>
-    
+
+            <% if (filmeSearch.length == 0){ %>
+                <div class="container">
+                  <% filmes.forEach((filme) => { %>
+                  <div class="item">
+                    <h2><%= filme.nome %></h2>
+                    <p><%= filme.descricao %></p>
+                    <a href="/filmes/<%= filme.id %>"
+                      ><img src="<%= filme.imagem %>" alt="capa do filme"
+                    /></a>
+                  </div>
+                  <% }) %>
+                </div>
+
+                <% } else { %>
+                    <section class="result">
+                      <div id="result-search-space">
+                        <h2>Resultados da Pesquisa</h2>
+                        <a href="/">Todos os filmes</a>
+                      </div>
+                    </section>
+
+                    <div class="container">
+                        <% filmeSearch.forEach((filme) => { %>
+                        <div class="item">
+                          <h2><%= filme.nome %></h2>
+                          <p><%= filme.descricao %></p>
+                          <a href="/filmes/<%= filme.id %>"
+                            ><img src="<%= filme.imagem %>" alt="capa do filme"
+                          /></a>
+                        </div>
+                        <% }) %>
+                      </div>
+                      <% } %>
+                    </main>      
+
             <div class="container">
                 <% filmes.forEach(item => { %>
                     <div class="item">
