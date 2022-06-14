@@ -99,6 +99,7 @@ const editar = async (req, res) => {
      res.render("editar", {
          filme: filmeEditado,
          message:"Filme editado com sucesso!",
+      
      });
     res.redirect("/");
   } catch (err) {
