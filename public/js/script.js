@@ -1,3 +1,4 @@
+const closeAlert = () =>{
 const closeMessage = document.querySelector('#close-message');
 const mensagem = document.querySelector('.message');
 
@@ -9,3 +10,4 @@ setTimeout(()=>{
     mensagem.getElementsByClassName.display = 'none';
 
 },5000);
+}
