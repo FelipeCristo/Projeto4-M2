@@ -1,13 +1,11 @@
-const closeAlert = () =>{
 const closeMessage = document.querySelector('#close-message');
 const mensagem = document.querySelector('.message');
 
-closeMessage.addEventListener('click',function(){
-    mensagem.getElementsByClassName.display = "none";
+closeMessage.addEventListener("click", function(){
+    mensagem.style.display = "none";
 });
 
 setTimeout(()=>{
-    mensagem.getElementsByClassName.display = 'none';
+    mensagem.style.display = 'none';
 
 },5000);
-}
